@@ -1,0 +1,49 @@
+package com.xworkz.xworkzapp.util;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import com.xworkz.xworkzapp.dto.ShoppingCartDTO;
+
+public class CartTester {
+public static void main(String[] args) {
+	ShoppingCartDTO cartDTO1= new ShoppingCartDTO();
+	cartDTO1.setItemName("Salwar");
+	cartDTO1.setPrice(2000);
+	cartDTO1.setQuantity(1);
+	
+	ShoppingCartDTO cartDTO2= new ShoppingCartDTO();
+	cartDTO2.setItemName("Shoe");
+	cartDTO2.setPrice(1500);
+	cartDTO2.setQuantity(1);
+	
+	Collection<ShoppingCartDTO> cartDTOs=new ArrayList<ShoppingCartDTO>();
+	cartDTOs.add(cartDTO1);
+	cartDTOs.add(cartDTO2);
+	
+	ShoppingCartDTO cartDTO3= new ShoppingCartDTO();
+	cartDTO3.setItemName("Shoe");
+	cartDTO3.setPrice(1600);
+	cartDTO3.setQuantity(1);
+	
+	boolean contain=cartDTOs.contains(cartDTO3);
+	System.out.println("Contains"+contain);
+	
+	/*for (ShoppingCartDTO shoppingCartDTO:cartDTOs){
+		if(shoppingCartDTO.getItemName().equals("Shoe")){
+			System.out.println("shoe is in cart");
+		}
+		else{
+			System.out.println("shoe is not in cart,can add");
+		}
+	}*/
+	if(contain){
+		System.out.println("shoe is in cart");
+	}
+	else{
+		System.out.println("after adding shoe"+cartDTOs.size());
+		
+	}
+	
+}
+}
