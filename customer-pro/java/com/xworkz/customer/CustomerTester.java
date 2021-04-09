@@ -13,7 +13,7 @@ public class CustomerTester {
 
 	public static void main(String[] args) {
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext("injection.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("injection.xml","application-db.xml");
 		CustomerEntity entity = new CustomerEntity("Geetha", "kottur", 4, 900852);
 		CustomerRepository repo = new CustomerRepositoryImpl();
 		CustomerService service = context.getBean(CustomerService.class);

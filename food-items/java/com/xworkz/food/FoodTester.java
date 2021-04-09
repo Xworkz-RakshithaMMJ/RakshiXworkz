@@ -12,7 +12,7 @@ public class FoodTester {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = new ClassPathXmlApplicationContext("injection.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("injection.xml","application-db.xml");
 		FoodItemService service = context.getBean(FoodItemService.class);
 		FoodItemEntity entity = new FoodItemEntity("Idli", 20, 2, FoodType.SOUTH_INDIAN, FoodQuality.GOOD, 4);
 		boolean save = service.validateAndSave(entity);

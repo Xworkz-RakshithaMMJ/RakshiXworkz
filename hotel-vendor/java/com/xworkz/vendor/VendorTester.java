@@ -13,7 +13,7 @@ import com.xworkz.vendor.service.HotelVendorServiceImpl;
 public class VendorTester {
 
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("injection.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("injection.xml","application-db.xml");
 		HotelVendorEntity entity = new HotelVendorEntity("Nakshatra", "Ballari", 90087, 3, HotelVendor.SUPPLIER);
 		HotelVendorRepository repo = new HotelVendorRepoImpl();
 		HotelVendorService service = context.getBean(HotelVendorService.class);
